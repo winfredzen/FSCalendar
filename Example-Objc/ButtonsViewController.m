@@ -47,7 +47,7 @@
     calendar.delegate = self;
     calendar.backgroundColor = [UIColor whiteColor];
     calendar.appearance.headerMinimumDissolvedAlpha = 0;
-    calendar.appearance.caseOptions = FSCalendarCaseOptionsHeaderUsesUpperCase;
+    calendar.appearance.caseOptions = FSCalendarCaseOptionsHeaderUsesUpperCase; //Header大写 如 DECEMBER
     [self.view addSubview:calendar];
     self.calendar = calendar;
     

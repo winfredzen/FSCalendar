@@ -46,6 +46,7 @@
     calendar.delegate = self;
     calendar.swipeToChooseGesture.enabled = YES;
     calendar.allowsMultipleSelection = YES;
+    calendar.placeholderType = FSCalendarPlaceholderTypeFillHeadTail;
     [view addSubview:calendar];
     self.calendar = calendar;
     
@@ -105,7 +106,7 @@
 
 - (NSDate *)minimumDateForCalendar:(FSCalendar *)calendar
 {
-    return [self.dateFormatter dateFromString:@"2016-07-08"];
+    return [self.dateFormatter dateFromString:@"2019-11-01"];
 }
 
 - (NSDate *)maximumDateForCalendar:(FSCalendar *)calendar

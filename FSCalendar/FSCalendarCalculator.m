@@ -223,10 +223,11 @@
     NSNumber *rowCount = self.rowCounts[month];
     if (!rowCount) {
         NSDate *firstDayOfMonth = [self.gregorian fs_firstDayOfMonth:month];
+        // 1 是星期天 7
         NSInteger weekdayOfFirstDay = [self.gregorian component:NSCalendarUnitWeekday fromDate:firstDayOfMonth];
         NSInteger numberOfDaysInMonth = [self.gregorian fs_numberOfDaysInMonth:month];
         NSInteger numberOfPlaceholdersForPrev = ((weekdayOfFirstDay - self.gregorian.firstWeekday) + 7) % 7;
-        NSInteger headDayCount = numberOfDaysInMonth + numberOfPlaceholdersForPrev;
+        NSInteger headDayCount = numberOfDaysInMonth + numberOfPlaceholdersForPrev; //
         NSInteger numberOfRows = (headDayCount/7) + (headDayCount%7>0);
         rowCount = @(numberOfRows);
         self.rowCounts[month] = rowCount;

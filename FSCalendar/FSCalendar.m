@@ -66,7 +66,7 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
 @property (assign, nonatomic) BOOL                       needsRequestingBoundingDates;
 @property (assign, nonatomic) CGFloat                    preferredHeaderHeight;
 @property (assign, nonatomic) CGFloat                    preferredWeekdayHeight;
-@property (assign, nonatomic) CGFloat                    preferredRowHeight;
+@property (assign, nonatomic) CGFloat                    preferredRowHeight; //行高
 @property (assign, nonatomic) FSCalendarOrientation      orientation;
 
 @property (strong, nonatomic) NSMutableArray<NSOperation *> *didLayoutOperations;
@@ -307,13 +307,13 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
         _deliver.hidden = self.calendarHeaderView.hidden;
         if (!self.floatingMode) {
             switch (self.transitionCoordinator.representingScope) {
-                case FSCalendarScopeMonth: {
+                case FSCalendarScopeMonth: {//月
                     CGFloat contentHeight = rowHeight*6 + padding*2;
                     _daysContainer.frame = CGRectMake(0, headerHeight+weekdayHeight, self.fs_width, contentHeight);
                     _collectionView.frame = CGRectMake(0, 0, _daysContainer.fs_width, contentHeight);
                     break;
                 }
-                case FSCalendarScopeWeek: {
+                case FSCalendarScopeWeek: {//周
                     CGFloat contentHeight = rowHeight + padding*2;
                     _daysContainer.frame = CGRectMake(0, headerHeight+weekdayHeight, self.fs_width, contentHeight);
                     _collectionView.frame = CGRectMake(0, 0, _daysContainer.fs_width, contentHeight);

@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.calendar.today = nil;
+    self.calendar.today = nil; //I don't need the today circle
     self.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh-CN"];
     self.calendar.adjustsBoundingRectWhenChangingMonths = NO;
     self.calendar.placeholderType = FSCalendarPlaceholderTypeNone;

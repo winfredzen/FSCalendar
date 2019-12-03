@@ -28,26 +28,26 @@ FOUNDATION_EXPORT double FSCalendarVersionNumber;
 //! Project version string for FSCalendar.
 FOUNDATION_EXPORT const unsigned char FSCalendarVersionString[];
 
-typedef NS_ENUM(NSUInteger, FSCalendarScope) {
+typedef NS_ENUM(NSUInteger, FSCalendarScope) { //范围
     FSCalendarScopeMonth,
     FSCalendarScopeWeek
 };
 
-typedef NS_ENUM(NSUInteger, FSCalendarScrollDirection) {
+typedef NS_ENUM(NSUInteger, FSCalendarScrollDirection) {//滚动方向
     FSCalendarScrollDirectionVertical,
     FSCalendarScrollDirectionHorizontal
 };
 
 typedef NS_ENUM(NSUInteger, FSCalendarPlaceholderType) {
     FSCalendarPlaceholderTypeNone          = 0,
-    FSCalendarPlaceholderTypeFillHeadTail  = 1,
-    FSCalendarPlaceholderTypeFillSixRows   = 2
+    FSCalendarPlaceholderTypeFillHeadTail  = 1, //填满头部和尾部
+    FSCalendarPlaceholderTypeFillSixRows   = 2 //6行
 };
 
 typedef NS_ENUM(NSUInteger, FSCalendarMonthPosition) {
-    FSCalendarMonthPositionPrevious,
-    FSCalendarMonthPositionCurrent,
-    FSCalendarMonthPositionNext,
+    FSCalendarMonthPositionPrevious, //前一个月
+    FSCalendarMonthPositionCurrent, //当前月
+    FSCalendarMonthPositionNext, //下一个月
     
     FSCalendarMonthPositionNotFound = NSNotFound
 };

@@ -40,7 +40,7 @@ typedef NS_ENUM(NSUInteger, FSCalendarMonthPosition);
 
 
 /**
- The collection of event dots of the cell
+ The collection of event dots of the cell 事件
  */
 @property (weak, nonatomic) FSCalendarEventIndicator *eventIndicator;
 

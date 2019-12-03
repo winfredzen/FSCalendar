@@ -70,7 +70,7 @@
     shapeLayer.borderColor = [UIColor clearColor].CGColor;
     shapeLayer.opacity = 0;
     [self.contentView.layer insertSublayer:shapeLayer below:_titleLabel.layer];
-    self.shapeLayer = shapeLayer;
+    self.shapeLayer = shapeLayer; //在_titleLabel layer之下
     
     eventIndicator = [[FSCalendarEventIndicator alloc] initWithFrame:CGRectZero];
     eventIndicator.backgroundColor = [UIColor clearColor];
@@ -91,13 +91,13 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    if (_subtitle) {
+    if (_subtitle) { //有子标题的话
         _subtitleLabel.text = _subtitle;
         if (_subtitleLabel.hidden) {
             _subtitleLabel.hidden = NO;
         }
     } else {
-        if (!_subtitleLabel.hidden) {
+        if (!_subtitleLabel.hidden) { //无子标题则隐藏
             _subtitleLabel.hidden = YES;
         }
     }
@@ -108,7 +108,7 @@
         
         CGFloat height = titleHeight + subtitleHeight;
         _titleLabel.frame = CGRectMake(
-                                       self.preferredTitleOffset.x,
+                                       self.preferredTitleOffset.x, //x偏移
                                        (self.contentView.fs_height*5.0/6.0-height)*0.5+self.preferredTitleOffset.y,
                                        self.contentView.fs_width,
                                        titleHeight
@@ -170,6 +170,7 @@
 {
     _shapeLayer.opacity = 1;
         
+    //放大缩小弹性动画
     CAAnimationGroup *group = [CAAnimationGroup animation];
     CABasicAnimation *zoomOut = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     zoomOut.fromValue = @0.3;
