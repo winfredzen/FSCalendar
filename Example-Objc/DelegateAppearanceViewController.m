@@ -131,6 +131,7 @@ NS_ASSUME_NONNULL_END
     calendar.swipeToChooseGesture.enabled = YES;
     calendar.backgroundColor = [UIColor whiteColor];
     calendar.appearance.caseOptions = FSCalendarCaseOptionsHeaderUsesUpperCase|FSCalendarCaseOptionsWeekdayUsesSingleUpperCase;
+    calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh-CN"]; //中文
     [self.view addSubview:calendar];
     self.calendar = calendar;
     
