@@ -16,7 +16,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         UIImageView *circleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"circle"]];
-        [self.contentView insertSubview:circleImageView atIndex:0];
+        [self.contentView insertSubview:circleImageView atIndex:0];//放在最下面
         self.circleImageView = circleImageView;
         
         CAShapeLayer *selectionLayer = [[CAShapeLayer alloc] init];
@@ -66,7 +66,7 @@
 {
     [super configureAppearance];
     // Override the build-in appearance configuration
-    if (self.isPlaceholder) {
+    if (self.isPlaceholder) {//占位的cell
         self.titleLabel.textColor = [UIColor lightGrayColor];
         self.eventIndicator.hidden = YES;
     }

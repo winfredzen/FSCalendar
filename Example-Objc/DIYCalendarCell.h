@@ -9,11 +9,11 @@
 #import <FSCalendar/FSCalendar.h>
 
 typedef NS_ENUM(NSUInteger, SelectionType) {
-    SelectionTypeNone,
-    SelectionTypeSingle,
-    SelectionTypeLeftBorder,
-    SelectionTypeMiddle,
-    SelectionTypeRightBorder
+    SelectionTypeNone,//么有
+    SelectionTypeSingle,//只有一个
+    SelectionTypeLeftBorder,//左边
+    SelectionTypeMiddle,//中间
+    SelectionTypeRightBorder//右边
 };
 
 

@@ -14,6 +14,7 @@
 #import "ButtonsViewController.h"
 #import "DIYExampleViewController.h"
 #import "RangePickerViewController.h"
+#import "WZCalenderDemoVC.h"
 
 @implementation FSTableViewController
 
@@ -32,7 +33,8 @@
                              [FullScreenExampleViewController class],
                              [NSObject class],
                              [NSObject class],
-                             [LoadViewExampleViewController class]
+                             [LoadViewExampleViewController class],
+                             [WZCalenderDemoVC class]
                             ];
     
     self.tableView.rowHeight = [[UIDevice currentDevice].model hasSuffix:@"iPad"] ? 60.0 : 44.0;

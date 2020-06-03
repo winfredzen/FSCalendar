@@ -130,6 +130,7 @@
     
     _imageView.frame = CGRectMake(self.preferredImageOffset.x, self.preferredImageOffset.y, self.contentView.fs_width, self.contentView.fs_height);
     
+    //保证_shapeLayer为矩形
     CGFloat titleHeight = self.bounds.size.height*5.0/6.0;
     CGFloat diameter = MIN(self.bounds.size.height*5.0/6.0,self.bounds.size.width);
     diameter = diameter > FSCalendarStandardCellDiameter ? (diameter - (diameter-FSCalendarStandardCellDiameter)*0.5) : diameter;
@@ -144,6 +145,7 @@
         _shapeLayer.path = path;
     }
     
+    //事件
     CGFloat eventSize = _shapeLayer.frame.size.height/6.0;
     _eventIndicator.frame = CGRectMake(
                                        self.preferredEventOffset.x,
@@ -222,12 +224,12 @@
     if (!shouldHideShapeLayer) {
         
         CGColorRef cellFillColor = self.colorForCellFill.CGColor;
-        if (!CGColorEqualToColor(_shapeLayer.fillColor, cellFillColor)) {
+        if (!CGColorEqualToColor(_shapeLayer.fillColor, cellFillColor)) {//填充颜色
             _shapeLayer.fillColor = cellFillColor;
         }
         
         CGColorRef cellBorderColor = self.colorForCellBorder.CGColor;
-        if (!CGColorEqualToColor(_shapeLayer.strokeColor, cellBorderColor)) {
+        if (!CGColorEqualToColor(_shapeLayer.strokeColor, cellBorderColor)) {//描边颜色
             _shapeLayer.strokeColor = cellBorderColor;
         }
         

@@ -155,7 +155,7 @@
 
 - (BOOL)calendar:(FSCalendar *)calendar shouldDeselectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
 {
-    return monthPosition == FSCalendarMonthPositionCurrent;
+    return monthPosition == FSCalendarMonthPositionCurrent;//当前月才可以选中
 }
 
 - (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
